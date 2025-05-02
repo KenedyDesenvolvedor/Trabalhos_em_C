@@ -2,9 +2,9 @@
 
 int main() {
     char estado;
-    int cartaCod, populacao, NPT; //Número de Pontos Turisticos
+    int cartaCod, populacao, NPT; // NPT = Número de Pontos Turisticos
     char cidade[50];
-    float PIB, area;
+    float PIB, area, DP, PIBC; //DP = densidade populacional PIBC = PIB per Capita
 
     printf("Você foi selecionado para escolher as Duas Novas cartas do jogo Super Trunfo\n");
 
@@ -31,14 +31,19 @@ int main() {
 
     printf("\nAnalisando...\n");
 
+    DP = (float)(populacao/area);
+    PIBC = (float)(PIB/populacao);
+
     printf("\nCarta 1:\n");
     printf("Estado: %c\n", estado);
     printf("Código: %c%02d\n", estado, cartaCod);
     printf("Nome da Cidade: %s\n", cidade);
     printf("População: %d\n", populacao);
-    printf("Área: %.2f\n", area);
-    printf("PIB: %.2f\n", PIB);
+    printf("Área: %.2fkm²\n", area);
+    printf("PIB: R$%.2f bilhoes de reais\n", PIB);
     printf("Número de Pontos Turísticos: %d\n", NPT);
+    printf("Densidade Populacional: %.2fhab/km²\n", DP);
+    printf("PIB per capita: %.2f reais\n", PIBC);
 
     printf("Agora a segunda carta, escolha a classificação do estado de A até H: ");
     scanf(" %c", &estado);
@@ -63,14 +68,19 @@ int main() {
 
     printf("\nAnalisando...\n");
 
+    DP = (float)(populacao/area);
+    PIBC = (float)(PIB/populacao);
+
     printf("\nCarta 2:\n");
     printf("Estado: %c\n", estado);
     printf("Código: %c%02d\n", estado, cartaCod); 
     printf("Nome da Cidade: %s\n", cidade);
     printf("População: %d\n", populacao);
-    printf("Área: %.2f\n", area);
-    printf("PIB: %.2f\n", PIB);
+    printf("Área: %.2f\nkm²", area);
+    printf("PIB: R$%.2f\n bilhoes de reais", PIB);
     printf("Número de Pontos Turísticos: %d\n", NPT);
+    printf("Densidade Populacional: %.2fhab/km²\n", DP);
+    printf("PIB per capita: %.2f reais\n", PIBC);
 
     return 0;
 }
